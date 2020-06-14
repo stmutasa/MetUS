@@ -44,7 +44,7 @@ tf.app.flags.DEFINE_float('loss_factor', 1.0, """ Loss Factor""")
 # Directory control
 tf.app.flags.DEFINE_string('train_dir', 'training/', """Directory to write event logs and save checkpoint files""")
 tf.app.flags.DEFINE_string('RunInfo', 'Center/', """Unique file name for this training run""")
-tf.app.flags.DEFINE_integer('GPU', 1, """Which GPU to use""")
+tf.app.flags.DEFINE_integer('GPU', 0, """Which GPU to use""")
 
 def train():
 

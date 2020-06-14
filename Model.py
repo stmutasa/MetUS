@@ -123,8 +123,7 @@ def backward_pass(total_loss):
     return dummy_op
 
 
-def inputs(training=True, skip=False):
-
+def inputs(training=True, skip=False, step_tracker=0):
     """
     Loads the inputs
     :param filenames: Filenames placeholder
@@ -140,4 +139,4 @@ def inputs(training=True, skip=False):
     else:
         print('-------------------------Previously saved records found! Loading...')
 
-    return Input.load_data(training)
+    return Input.load_data(training, step_tracker)

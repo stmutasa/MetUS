@@ -120,9 +120,96 @@ def pre_proc_train(box_dims=384):
     sdl.save_segregated_tfrecords(2, data, 'accno', 'data/train/LNs')
 
 
-# Load the protobuf
-def load_data(training=True):
+def pre_proc_test(box_dims=384):
+    """
+    Pre processes the input for the training data
+    :param box_dims: dimensions of the saved images
+    :return:
+    """
 
+    # Load the files and randomly shuffle them
+    filenames = sdl.retreive_filelist('nii.gz', True, test_data)
+    filenames = [x for x in filenames if 'label' in x]
+    shuffle(filenames)
+
+    # Global variables
+    display, counter, data, data_test, index, pt = [], [0, 0], {}, {}, 0, 0
+
+    for file in filenames:
+
+        # Load the label volume first
+        try:
+            segments = sdl.load_NIFTY(file)
+        except Exception as e:
+            logger.warning('Segment Load Error: %s' % e)
+            continue
+
+        # Retreive the patient information
+        try:
+            fbase, fdir = os.path.basename(file), os.path.dirname(file)
+            accno = file.split('/')[-2]
+            proj = fbase.replace(' ', '').replace('AXILLA', '').replace(accno, '').replace('X', '').replace('-label.nii.gz', '')
+            if 'No' in fdir.split('/')[-2]:
+                label = 0
+            else:
+                label = 1
+        except Exception as e:
+            logger.warning('View/Accno error: %s' % e)
+            continue
+
+        # Set destination filename info
+        view = accno + '_' + proj
+
+        # Now load the image itsself
+        try:
+            volfile = fdir + '/' + fbase[:2].replace('X', '') + fbase[2:].replace('-label', '')
+            image = sdl.load_NIFTY(volfile)
+        except Exception as e:
+            logger.warning('Image Load Error: %s' % e)
+            continue
+
+        # Normalize here since we want it normed to the general surrounding fat
+        image = sdl.adaptive_normalization(image)
+
+        # Apply the segmentation to the image
+        image *= segments.astype(np.uint8)
+
+        """
+            The nodes get as big as 437 pixels across
+            Make a regular crop that size, then another that's normalized to the individual node
+            Save both as two channels
+        """
+        crop_size = 440
+        blob, cn = sdl.largest_blob(segments)
+        radius = int(np.sum(blob) ** (1 / 3) * 2.5) * 3
+        crop_image, _ = sdl.generate_box(image, cn, crop_size, dim3d=False)
+        norm_image, _ = sdl.generate_box(image, cn, radius, dim3d=False)
+
+        # Now resize and combine the images into one
+        # TODO: We save twice as many images for test so that we can load slice index 0 on inference then aggregate
+        BD = box_dims
+        crop_image, norm_image = sdl.zoom_2D(crop_image, [BD, BD]), sdl.zoom_2D(norm_image, [BD, BD])
+        crop_image, norm_image = np.expand_dims(crop_image, -1), np.expand_dims(norm_image, -1)
+        crop_image = np.concatenate([crop_image, crop_image], -1).astype(np.float32)
+        norm_image = np.concatenate([norm_image, norm_image], -1).astype(np.float32)
+
+        # Save the data
+        data[index] = {'data': crop_image.astype(np.float16), 'label': label, 'group': 'testc', 'view': view, 'accno': accno}
+        index += 1
+        data[index] = {'data': norm_image.astype(np.float16), 'label': label, 'group': 'testn', 'view': view, 'accno': accno}
+        index += 1
+
+        # Increment counters
+        pt += 1
+        del image
+
+    # Save the data.
+    print('Saving %s images from %s patients' % (index, pt))
+    sdl.save_tfrecords(data, 1, file_root='data/test/LNs')
+
+
+# Load the protobuf
+def load_data(training=True, step_tracker=0):
     """
     Loads the protocol buffer into a form to send to shuffle. To oversample classes we made some mods...
     Load with parallel interleave -> Prefetch -> Large Shuffle -> Parse labels -> Undersample map -> Flat Map
@@ -173,7 +260,7 @@ def load_data(training=True):
 
     scope = 'data_augmentation' if training else 'input'
     with tf.name_scope(scope):
-        dataset = dataset.map(DataPreprocessor(training), num_parallel_calls=tf.data.experimental.AUTOTUNE)
+        dataset = dataset.map(DataPreprocessor(training, step_tracker), num_parallel_calls=tf.data.experimental.AUTOTUNE)
 
     # Batch and prefetch
     if training:
@@ -192,8 +279,9 @@ class DataPreprocessor(object):
 
     # Applies transformations to dataset
 
-  def __init__(self, distords):
-    self._distords = distords
+    def __init__(self, distords, step_tracker=0):
+        self._distords = distords
+        self.step_tracker = step_tracker
 
   def __call__(self, record):
 
@@ -238,16 +326,19 @@ class DataPreprocessor(object):
         # Add the poisson noise
         image = tf.add(image, tf.cast(noise, tf.float32))
 
-    else: # Validation
+    else:  # Validation
 
-        # Resize to network size
+        # Use the first slice. Remember we saved twice as many images, saving the norm and crop cuts in different entries
+        image = tf.squeeze(image[:, :, 1])
         image = tf.expand_dims(image, -1)
-        image = tf.image.resize_images(image, [FLAGS.network_dims, FLAGS.network_dims], tf.compat.v1.image.ResizeMethod.BICUBIC)
-        record['img_small'] = tf.image.resize_images(image, [FLAGS.network_dims//8, FLAGS.network_dims//8], tf.compat.v1.image.ResizeMethod.BICUBIC)
+
+        # Reshape image
+        image = tf.image.resize_images(image, [FLAGS.network_dims, FLAGS.network_dims])
 
     # Make record image
     record['data'] = image
 
     return record
 
-#pre_proc_train(512)
+# pre_proc_train(384)
+# pre_proc_test(384)

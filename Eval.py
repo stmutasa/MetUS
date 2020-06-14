@@ -3,7 +3,7 @@
 import os
 import time
 
-import LocModel as network
+import Model as network
 import tensorflow as tf
 import SODTester as SDT
 import SODLoader as SDL
@@ -23,10 +23,10 @@ FLAGS = tf.app.flags.FLAGS
 # Define some of the data variables
 tf.app.flags.DEFINE_string('data_dir', 'data/test/', """Path to the data directory.""")
 tf.app.flags.DEFINE_string('training_dir', 'training/', """Path to the training directory.""")
-tf.app.flags.DEFINE_integer('box_dims', 1024, """dimensions to save files""")
-tf.app.flags.DEFINE_integer('network_dims', 512, """dimensions of the network input""")
-tf.app.flags.DEFINE_integer('epoch_size', 200, """How many examples""")
-tf.app.flags.DEFINE_integer('batch_size', 200, """Number of images to process in a batch.""")
+tf.app.flags.DEFINE_integer('box_dims', 384, """dimensions to save files""")
+tf.app.flags.DEFINE_integer('network_dims', 64, """dimensions of the network input""")
+tf.app.flags.DEFINE_integer('epoch_size', 180, """How many examples""")
+tf.app.flags.DEFINE_integer('batch_size', 180, """Number of images to process in a batch.""")
 
 # Hyperparameters:
 tf.app.flags.DEFINE_float('dropout_factor', 0.5, """ Keep probability""")
@@ -34,8 +34,7 @@ tf.app.flags.DEFINE_float('moving_avg_decay', 0.999, """ The decay rate for the 
 
 # Directory control
 tf.app.flags.DEFINE_string('train_dir', 'training/', """Directory to write event logs and save checkpoint files""")
-tf.app.flags.DEFINE_string('net_type', 'CEN', """Network predicting CEN or BBOX""")
-tf.app.flags.DEFINE_string('RunInfo', 'Center/', """Unique file name for this training run""")
+tf.app.flags.DEFINE_string('RunInfo', 'First/', """Unique file name for this training run""")
 tf.app.flags.DEFINE_integer('GPU', 0, """Which GPU to use""")
 
 # Define a custom training class
@@ -56,12 +55,11 @@ def test():
         data['data'] = tf.reshape(data['data'], [FLAGS.batch_size, FLAGS.network_dims, FLAGS.network_dims])
 
         # Perform the forward pass:
-        if FLAGS.net_type == 'BBOX':
-            logits = network.forward_pass((data['data'], data['img_small']), phase_train=phase_train)
-            labels = data['box_data'][:, :4]
-        elif FLAGS.net_type == 'CEN':
-            logits = network.forward_pass_center((data['data'], data['img_small']), phase_train=phase_train)
-            labels = data['box_data'][:, 4:6]
+        logits = network.forward_pass(data['data'], phase_train=phase_train)
+        softmax = tf.nn.softmax(logits)
+
+        # Labels
+        labels = data['label']
 
         # Initialize variables operation
         var_init = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
@@ -121,9 +119,11 @@ def test():
 
                 try:
                     while step < max_steps:
-
                         # Load some metrics for testing
-                        _lbls, _logs, _id = mon_sess.run([labels, logits, data['accno']], feed_dict={phase_train: False})
+                        _lbls, _logits, _ptID = mon_sess.run([labels, logits, data['accno']], feed_dict={phase_train: False})
+
+                        # Combine predictions
+                        data, lbl, logitz = sdt.combine_predictions(_lbls, _logits, _ptID, FLAGS.batch_size)
 
                         # Increment step
                         step += 1
@@ -134,37 +134,25 @@ def test():
                 finally:
 
                     # Calculate final MAE and ACC
-                    sdt.MAE = sdt.calculate_mean_absolute_error(_logs, _lbls, display=False)
-                    print ('*** MAE = %.4f%% (Epoch: %s), Current Best MAE = %.4f (Epoch %s),  Labels/Logits: ***' %
-                           (sdt.MAE*100, Epoch, best_MAE, best_epoch))
-                    for z in range(10):
-                        this_MAE = np.mean(np.absolute(_logs[z] - _lbls[z]))
+                    sdt.calculate_metrics(_logits, _lbls, 1, step)
+                    sdt.retreive_metrics_classification(Epoch, True)
+                    print('------ Current Best AUC: %.4f (Epoch: %s) --------' % (best_MAE, best_epoch))
 
-                        if FLAGS.net_type == 'BBOX':
-                            print('%s -- %.3f/%.3f, %.3f/%.3f, %.3f/%.3f, %.3f/%.3f for an MAE of %.2f%%'
-                                  % (_id[z], _lbls[z, 0], _logs[z, 0], _lbls[z, 1], _logs[z, 1], _lbls[z, 2],
-                                     _logs[z, 2], _lbls[z, 3], _logs[z, 3], this_MAE * 100))
-
-                        if FLAGS.net_type == 'CEN':
-                            print('%s -- %.3f/%.3f, %.3f/%.3f, for an MAE of %.2f%%'
-                                  % (_id[z], _lbls[z, 0], _logs[z, 0], _lbls[z, 1], _logs[z, 1], this_MAE * 100))
-
-                    # Lets save runs that perform well
-                    if sdt.MAE <= best_MAE:
-
+                    # Lets save runs below 0.8
+                    if sdt.AUC >= best_MAE:
                         # Save the checkpoint
                         print(" ---------------- SAVING THIS ONE %s", ckpt.model_checkpoint_path)
 
                         # Define the filenames
-                        checkpoint_file = os.path.join('testing/' + FLAGS.RunInfo, ('Epoch_%s_MAE_%0.3f' % (Epoch, sdt.MAE)))
-                        #csv_file = os.path.join('testing/' + FLAGS.RunInfo, ('%s_E_%s_AUC_%0.2f.csv' % (FLAGS.RunInfo[:-1], Epoch, sdt.MAE)))
+                        checkpoint_file = os.path.join('testing/' + FLAGS.RunInfo, ('Epoch_%s_AUC_%0.3f' % (Epoch, sdt.AUC)))
+                        csv_file = os.path.join('testing/' + FLAGS.RunInfo, ('%s_E_%s_AUC_%0.2f.csv' % (FLAGS.RunInfo[:-1], Epoch, sdt.AUC)))
 
                         # Save the checkpoint
                         saver.save(mon_sess, checkpoint_file)
-                        #sdl.save_Dict_CSV(data, csv_file)
+                        # sdl.save_Dict_CSV(data, csv_file)
 
                         # Save a new best MAE
-                        best_MAE = sdt.MAE
+                        best_MAE = sdt.AUC
                         best_epoch = Epoch
 
                     # Shut down the session
@@ -192,7 +180,7 @@ def test():
 
 
 def main(argv=None):  # pylint: disable=unused-argument
-    time.sleep(60)
+    time.sleep(0)
     if tf.gfile.Exists('testing/'):
         tf.gfile.DeleteRecursively('testing/')
     tf.gfile.MakeDirs('testing/')

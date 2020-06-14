@@ -1,2 +1,5 @@
 Saving segregated tfrecords... 106 in data/train/LNs_0
 Saving segregated tfrecords... 97 in data/train/LNs_1
+
+Test:
+Saving 180 images from 90 patients
