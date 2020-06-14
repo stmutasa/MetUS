@@ -34,7 +34,7 @@ tf.app.flags.DEFINE_float('moving_avg_decay', 0.999, """ The decay rate for the 
 
 # Directory control
 tf.app.flags.DEFINE_string('train_dir', 'training/', """Directory to write event logs and save checkpoint files""")
-tf.app.flags.DEFINE_string('RunInfo', 'First/', """Unique file name for this training run""")
+tf.app.flags.DEFINE_string('RunInfo', 'Center/', """Unique file name for this training run""")
 tf.app.flags.DEFINE_integer('GPU', 0, """Which GPU to use""")
 
 # Define a custom training class
@@ -74,10 +74,7 @@ def test():
         saver = tf.train.Saver(var_restore, max_to_keep=3)
 
         # Trackers for best performers
-        best_MAE, best_epoch = 1000, 0
-
-        # Tester instance
-        sdt = SDT.SODTester(False, True)
+        best_AUC, best_epoch = 0.1, 0
 
         while True:
 
@@ -116,14 +113,16 @@ def test():
 
                 # Tester instance
                 sdt = SDT.SODTester(True, False)
+                sdt.AUC = 0.1
 
                 try:
                     while step < max_steps:
+
                         # Load some metrics for testing
                         _lbls, _logits, _ptID = mon_sess.run([labels, logits, data['accno']], feed_dict={phase_train: False})
 
                         # Combine predictions
-                        data, lbl, logitz = sdt.combine_predictions(_lbls, _logits, _ptID, FLAGS.batch_size)
+                        _data, lbl, logitz = sdt.combine_predictions(_lbls, _logits, _ptID, FLAGS.batch_size)
 
                         # Increment step
                         step += 1
@@ -134,12 +133,12 @@ def test():
                 finally:
 
                     # Calculate final MAE and ACC
-                    sdt.calculate_metrics(_logits, _lbls, 1, step)
+                    sdt.calculate_metrics(logitz, lbl, 1, step)
                     sdt.retreive_metrics_classification(Epoch, True)
-                    print('------ Current Best AUC: %.4f (Epoch: %s) --------' % (best_MAE, best_epoch))
+                    print('------ Current Best AUC: %.4f (Epoch: %s) --------' % (best_AUC, best_epoch))
 
                     # Lets save runs below 0.8
-                    if sdt.AUC >= best_MAE:
+                    if sdt.AUC >= best_AUC:
                         # Save the checkpoint
                         print(" ---------------- SAVING THIS ONE %s", ckpt.model_checkpoint_path)
 
@@ -149,10 +148,10 @@ def test():
 
                         # Save the checkpoint
                         saver.save(mon_sess, checkpoint_file)
-                        # sdl.save_Dict_CSV(data, csv_file)
+                        sdl.save_Dict_CSV(_data, csv_file)
 
                         # Save a new best MAE
-                        best_MAE = sdt.AUC
+                        best_AUC = sdt.AUC
                         best_epoch = Epoch
 
                     # Shut down the session
@@ -180,7 +179,7 @@ def test():
 
 
 def main(argv=None):  # pylint: disable=unused-argument
-    time.sleep(0)
+    time.sleep(60)
     if tf.gfile.Exists('testing/'):
         tf.gfile.DeleteRecursively('testing/')
     tf.gfile.MakeDirs('testing/')

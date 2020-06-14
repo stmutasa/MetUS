@@ -278,67 +278,66 @@ def load_data(training=True, step_tracker=0):
 class DataPreprocessor(object):
 
     # Applies transformations to dataset
-
     def __init__(self, distords, step_tracker=0):
         self._distords = distords
         self.step_tracker = step_tracker
 
-  def __call__(self, record):
+    def __call__(self, record):
 
-    """Process img for training or eval."""
-    image = record['data']
+        """Process img for training or eval."""
+        image = record['data']
 
-    if self._distords:  # Training
+        if self._distords:
 
-        # Data Augmentation ------------------ Contrast, brightness, noise, rotate, shear, crop, flip
+            # Data Augmentation ------------------ Contrast, brightness, noise, rotate, shear, crop, flip
 
-        # Select random slice to use, use norm distribution around center. Remember z = 16
-        slice = tf.squeeze(tf.random.uniform([1], 0, 2, tf.int32))
-        image = tf.squeeze(image[:,:, slice])
-        #image = tf.cond(slice > 0, lambda: tf.squeeze(image[:,:, 1]), lambda: tf.squeeze(image[:,:, 0]))
+            # Select random slice to use, use norm distribution around center. Remember z = 16
+            slice = tf.squeeze(tf.random.uniform([1], 0, 2, tf.int32))
+            image = tf.squeeze(image[:, :, slice])
+            # image = tf.cond(slice > 0, lambda: tf.squeeze(image[:,:, 1]), lambda: tf.squeeze(image[:,:, 0]))
 
-        # Now augument this slice. First calc rotation parameters
-        angle = tf.squeeze(tf.random.uniform([1], -0.78, 0.78, tf.float32))
+            # Now augument this slice. First calc rotation parameters
+            angle = tf.squeeze(tf.random.uniform([1], -0.78, 0.78, tf.float32))
 
-        # Random rotate
-        image = tf.contrib.image.rotate(image, angle, interpolation='BILINEAR')
+            # Random rotate
+            image = tf.contrib.image.rotate(image, angle, interpolation='BILINEAR')
 
-        # Then randomly flip
-        image = tf.expand_dims(image, -1)
-        image = tf.image.random_flip_left_right(tf.image.random_flip_up_down(image))
+            # Then randomly flip
+            image = tf.expand_dims(image, -1)
+            image = tf.image.random_flip_left_right(tf.image.random_flip_up_down(image))
 
-        # Random brightness/contrast
-        image = tf.image.random_contrast(image, lower=0.95, upper=1.05)
+            # Random brightness/contrast
+            image = tf.image.random_contrast(image, lower=0.95, upper=1.05)
 
-        # Random center crop
-        ninety = int(FLAGS.box_dims * 0.9)
-        image = tf.image.random_crop(image, (ninety, ninety, 1))
+            # Random center crop
+            ninety = int(FLAGS.box_dims * 0.9)
+            image = tf.image.random_crop(image, (ninety, ninety, 1))
 
-        # Reshape image
-        image = tf.image.resize_images(image, [FLAGS.network_dims, FLAGS.network_dims])
+            # Reshape image
+            image = tf.image.resize_images(image, [FLAGS.network_dims, FLAGS.network_dims])
 
-        # For noise, first randomly determine how 'noisy' this study will be
-        T_noise = tf.random_uniform([1], 0, 0.1)
+            # For noise, first randomly determine how 'noisy' this study will be
+            T_noise = tf.random_uniform([1], 0, 0.1)
 
-        # Create a poisson noise array
-        noise = tf.random_uniform(shape=[FLAGS.network_dims, FLAGS.network_dims, 1], minval=-T_noise, maxval=T_noise)
+            # Create a poisson noise array
+            noise = tf.random_uniform(shape=[FLAGS.network_dims, FLAGS.network_dims, 1], minval=-T_noise, maxval=T_noise)
 
-        # Add the poisson noise
-        image = tf.add(image, tf.cast(noise, tf.float32))
+            # Add the poisson noise
+            image = tf.add(image, tf.cast(noise, tf.float32))
 
-    else:  # Validation
+        else:  # Validation
 
-        # Use the first slice. Remember we saved twice as many images, saving the norm and crop cuts in different entries
-        image = tf.squeeze(image[:, :, 1])
-        image = tf.expand_dims(image, -1)
+            # Use the first slice. Remember we saved twice as many images, saving the norm and crop cuts in different entries
+            image = tf.squeeze(image[:, :, 1])
+            image = tf.expand_dims(image, -1)
 
-        # Reshape image
-        image = tf.image.resize_images(image, [FLAGS.network_dims, FLAGS.network_dims])
+            # Reshape image
+            image = tf.image.resize_images(image, [FLAGS.network_dims, FLAGS.network_dims])
 
-    # Make record image
-    record['data'] = image
+        # Make record image
+        record['data'] = image
 
-    return record
+        return record
 
 # pre_proc_train(384)
 # pre_proc_test(384)

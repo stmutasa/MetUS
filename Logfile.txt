@@ -5471,3 +5471,63 @@ Colocations handled automatically by placer.
 2020-06-14 15:10:33,516 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use keras.layers.batch_normalization instead.
+2020-06-14 15:18:25,194 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 15:18:25,989 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 15:18:27,614 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 15:18:36,678 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-06-14 15:18:36,695 - INFO - Restoring parameters from training/Center/Epoch_2106
+2020-06-14 15:20:40,957 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 15:20:41,908 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 15:20:43,859 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 15:20:51,782 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-06-14 15:20:51,801 - INFO - Restoring parameters from training/Center/Epoch_2314
+2020-06-14 15:21:02,330 - INFO - Restoring parameters from training/Center/Epoch_2340
+2020-06-14 15:21:50,354 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 15:21:51,341 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 15:21:52,727 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 15:22:00,366 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-06-14 15:22:00,383 - INFO - Restoring parameters from training/Center/Epoch_2444
+2020-06-14 15:22:19,924 - INFO - Restoring parameters from training/Center/Epoch_2470
+2020-06-14 15:23:26,728 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 15:23:27,861 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 15:23:29,535 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 15:23:37,410 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-06-14 15:23:37,436 - INFO - Restoring parameters from training/Center/Epoch_2574
+2020-06-14 15:24:01,393 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 15:24:02,088 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py:3632: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 15:24:02,253 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 15:24:04,888 - INFO - Summary name Cross Entropy is illegal; using Cross_Entropy instead.
+2020-06-14 15:24:04,893 - WARNING - From /home/stmutasa/PycharmProjects/MetUS/Model.py:92: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+2020-06-14 15:24:05,344 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
