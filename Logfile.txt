@@ -5531,3 +5531,454 @@ Please switch to tf.train.get_or_create_global_step
 2020-06-14 15:24:05,344 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.cast instead.
+2020-06-14 15:25:07,450 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 15:25:08,083 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 15:25:09,161 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 15:25:17,182 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-06-14 15:25:17,200 - INFO - Restoring parameters from training/Center/Epoch_52
+2020-06-14 15:25:28,135 - INFO - Restoring parameters from training/Center/Epoch_78
+2020-06-14 15:25:47,414 - INFO - Restoring parameters from training/Center/Epoch_104
+2020-06-14 15:26:07,240 - INFO - Restoring parameters from training/Center/Epoch_130
+2020-06-14 15:26:18,954 - INFO - Restoring parameters from training/Center/Epoch_156
+2020-06-14 15:26:38,756 - INFO - Restoring parameters from training/Center/Epoch_182
+2020-06-14 15:26:58,523 - INFO - Restoring parameters from training/Center/Epoch_208
+2020-06-14 15:26:59,575 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2020-06-14 15:27:18,850 - INFO - Restoring parameters from training/Center/Epoch_234
+2020-06-14 15:27:26,419 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2020-06-14 15:27:30,190 - INFO - Restoring parameters from training/Center/Epoch_260
+2020-06-14 15:27:50,112 - INFO - Restoring parameters from training/Center/Epoch_286
+2020-06-14 15:28:09,839 - INFO - Restoring parameters from training/Center/Epoch_312
+2020-06-14 15:28:20,678 - INFO - Restoring parameters from training/Center/Epoch_338
+2020-06-14 15:28:40,239 - INFO - Restoring parameters from training/Center/Epoch_364
+2020-06-14 15:29:00,009 - INFO - Restoring parameters from training/Center/Epoch_390
+2020-06-14 15:29:10,776 - INFO - Restoring parameters from training/Center/Epoch_416
+2020-06-14 15:29:31,330 - INFO - Restoring parameters from training/Center/Epoch_442
+2020-06-14 15:29:51,010 - INFO - Restoring parameters from training/Center/Epoch_468
+2020-06-14 15:30:01,566 - INFO - Restoring parameters from training/Center/Epoch_494
+2020-06-14 15:30:21,420 - INFO - Restoring parameters from training/Center/Epoch_520
+2020-06-14 15:30:41,169 - INFO - Restoring parameters from training/Center/Epoch_546
+2020-06-14 15:30:52,072 - INFO - Restoring parameters from training/Center/Epoch_572
+2020-06-14 15:31:11,849 - INFO - Restoring parameters from training/Center/Epoch_598
+2020-06-14 15:31:31,623 - INFO - Restoring parameters from training/Center/Epoch_624
+2020-06-14 15:31:42,366 - INFO - Restoring parameters from training/Center/Epoch_650
+2020-06-14 15:32:02,327 - INFO - Restoring parameters from training/Center/Epoch_676
+2020-06-14 15:32:22,043 - INFO - Restoring parameters from training/Center/Epoch_702
+2020-06-14 15:32:32,982 - INFO - Restoring parameters from training/Center/Epoch_728
+2020-06-14 15:32:52,601 - INFO - Restoring parameters from training/Center/Epoch_754
+2020-06-14 15:33:12,178 - INFO - Restoring parameters from training/Center/Epoch_780
+2020-06-14 15:33:22,834 - INFO - Restoring parameters from training/Center/Epoch_806
+2020-06-14 15:33:42,642 - INFO - Restoring parameters from training/Center/Epoch_832
+2020-06-14 15:33:53,396 - INFO - Restoring parameters from training/Center/Epoch_858
+2020-06-14 15:34:13,062 - INFO - Restoring parameters from training/Center/Epoch_884
+2020-06-14 15:34:32,631 - INFO - Restoring parameters from training/Center/Epoch_910
+2020-06-14 15:34:43,439 - INFO - Restoring parameters from training/Center/Epoch_936
+2020-06-14 15:35:03,190 - INFO - Restoring parameters from training/Center/Epoch_962
+2020-06-14 15:35:13,994 - INFO - Restoring parameters from training/Center/Epoch_988
+2020-06-14 15:35:33,658 - INFO - Restoring parameters from training/Center/Epoch_1014
+2020-06-14 15:35:53,560 - INFO - Restoring parameters from training/Center/Epoch_1040
+2020-06-14 15:36:04,446 - INFO - Restoring parameters from training/Center/Epoch_1066
+2020-06-14 15:36:24,171 - INFO - Restoring parameters from training/Center/Epoch_1092
+2020-06-14 15:36:43,961 - INFO - Restoring parameters from training/Center/Epoch_1118
+2020-06-14 15:36:54,751 - INFO - Restoring parameters from training/Center/Epoch_1144
+2020-06-14 15:37:14,732 - INFO - Restoring parameters from training/Center/Epoch_1170
+2020-06-14 15:37:34,414 - INFO - Restoring parameters from training/Center/Epoch_1196
+2020-06-14 15:37:45,033 - INFO - Restoring parameters from training/Center/Epoch_1222
+2020-06-14 15:38:04,914 - INFO - Restoring parameters from training/Center/Epoch_1248
+2020-06-14 15:38:24,814 - INFO - Restoring parameters from training/Center/Epoch_1274
+2020-06-14 15:38:35,425 - INFO - Restoring parameters from training/Center/Epoch_1300
+2020-06-14 15:38:55,122 - INFO - Restoring parameters from training/Center/Epoch_1326
+2020-06-14 15:39:14,600 - INFO - Restoring parameters from training/Center/Epoch_1352
+2020-06-14 15:39:25,342 - INFO - Restoring parameters from training/Center/Epoch_1378
+2020-06-14 15:39:45,106 - INFO - Restoring parameters from training/Center/Epoch_1404
+2020-06-14 15:40:04,897 - INFO - Restoring parameters from training/Center/Epoch_1430
+2020-06-14 15:40:15,752 - INFO - Restoring parameters from training/Center/Epoch_1456
+2020-06-14 15:40:35,550 - INFO - Restoring parameters from training/Center/Epoch_1482
+2020-06-14 15:40:55,253 - INFO - Restoring parameters from training/Center/Epoch_1508
+2020-06-14 15:41:06,103 - INFO - Restoring parameters from training/Center/Epoch_1534
+2020-06-14 15:41:25,903 - INFO - Restoring parameters from training/Center/Epoch_1560
+2020-06-14 15:41:45,698 - INFO - Restoring parameters from training/Center/Epoch_1586
+2020-06-14 15:41:56,250 - INFO - Restoring parameters from training/Center/Epoch_1612
+2020-06-14 15:42:16,029 - INFO - Restoring parameters from training/Center/Epoch_1638
+2020-06-14 15:42:35,765 - INFO - Restoring parameters from training/Center/Epoch_1664
+2020-06-14 15:42:46,656 - INFO - Restoring parameters from training/Center/Epoch_1690
+2020-06-14 15:43:06,533 - INFO - Restoring parameters from training/Center/Epoch_1716
+2020-06-14 15:43:26,226 - INFO - Restoring parameters from training/Center/Epoch_1742
+2020-06-14 15:43:37,004 - INFO - Restoring parameters from training/Center/Epoch_1768
+2020-06-14 15:43:56,778 - INFO - Restoring parameters from training/Center/Epoch_1794
+2020-06-14 15:44:07,723 - INFO - Restoring parameters from training/Center/Epoch_1820
+2020-06-14 15:44:27,647 - INFO - Restoring parameters from training/Center/Epoch_1846
+2020-06-14 15:44:47,466 - INFO - Restoring parameters from training/Center/Epoch_1872
+2020-06-14 15:44:58,346 - INFO - Restoring parameters from training/Center/Epoch_1898
+2020-06-14 15:45:18,338 - INFO - Restoring parameters from training/Center/Epoch_1924
+2020-06-14 15:45:37,922 - INFO - Restoring parameters from training/Center/Epoch_1950
+2020-06-14 15:45:48,790 - INFO - Restoring parameters from training/Center/Epoch_1976
+2020-06-14 15:46:08,499 - INFO - Restoring parameters from training/Center/Epoch_2002
+2020-06-14 15:46:27,947 - INFO - Restoring parameters from training/Center/Epoch_2028
+2020-06-14 15:46:38,524 - INFO - Restoring parameters from training/Center/Epoch_2054
+2020-06-14 15:46:58,267 - INFO - Restoring parameters from training/Center/Epoch_2080
+2020-06-14 15:47:18,046 - INFO - Restoring parameters from training/Center/Epoch_2106
+2020-06-14 15:47:37,542 - INFO - Restoring parameters from training/Center/Epoch_2132
+2020-06-14 15:47:48,402 - INFO - Restoring parameters from training/Center/Epoch_2158
+2020-06-14 15:48:08,308 - INFO - Restoring parameters from training/Center/Epoch_2184
+2020-06-14 15:48:28,061 - INFO - Restoring parameters from training/Center/Epoch_2210
+2020-06-14 15:48:38,998 - INFO - Restoring parameters from training/Center/Epoch_2236
+2020-06-14 15:48:58,934 - INFO - Restoring parameters from training/Center/Epoch_2262
+2020-06-14 15:49:09,972 - INFO - Restoring parameters from training/Center/Epoch_2288
+2020-06-14 15:49:29,838 - INFO - Restoring parameters from training/Center/Epoch_2314
+2020-06-14 15:49:50,177 - INFO - Restoring parameters from training/Center/Epoch_2340
+2020-06-14 15:50:01,622 - INFO - Restoring parameters from training/Center/Epoch_2366
+2020-06-14 15:50:21,414 - INFO - Restoring parameters from training/Center/Epoch_2392
+2020-06-14 15:50:41,269 - INFO - Restoring parameters from training/Center/Epoch_2418
+2020-06-14 15:50:51,858 - INFO - Restoring parameters from training/Center/Epoch_2444
+2020-06-14 15:51:11,362 - INFO - Restoring parameters from training/Center/Epoch_2470
+2020-06-14 15:51:30,987 - INFO - Restoring parameters from training/Center/Epoch_2496
+2020-06-14 15:51:41,653 - INFO - Restoring parameters from training/Center/Epoch_2522
+2020-06-14 15:52:01,291 - INFO - Restoring parameters from training/Center/Epoch_2548
+2020-06-14 15:52:20,751 - INFO - Restoring parameters from training/Center/Epoch_2574
+2020-06-14 15:52:31,674 - INFO - Restoring parameters from training/Center/Epoch_2600
+2020-06-14 15:52:51,544 - INFO - Restoring parameters from training/Center/Epoch_2626
+2020-06-14 15:53:11,453 - INFO - Restoring parameters from training/Center/Epoch_2652
+2020-06-14 15:53:31,056 - INFO - Restoring parameters from training/Center/Epoch_2678
+2020-06-14 15:53:41,782 - INFO - Restoring parameters from training/Center/Epoch_2704
+2020-06-14 15:54:01,187 - INFO - Restoring parameters from training/Center/Epoch_2730
+2020-06-14 15:54:21,048 - INFO - Restoring parameters from training/Center/Epoch_2756
+2020-06-14 15:54:31,920 - INFO - Restoring parameters from training/Center/Epoch_2782
+2020-06-14 15:54:51,746 - INFO - Restoring parameters from training/Center/Epoch_2808
+2020-06-14 15:55:11,534 - INFO - Restoring parameters from training/Center/Epoch_2834
+2020-06-14 15:55:22,450 - INFO - Restoring parameters from training/Center/Epoch_2860
+2020-06-14 15:55:42,323 - INFO - Restoring parameters from training/Center/Epoch_2886
+2020-06-14 15:56:01,935 - INFO - Restoring parameters from training/Center/Epoch_2912
+2020-06-14 15:56:12,886 - INFO - Restoring parameters from training/Center/Epoch_2938
+2020-06-14 15:56:32,670 - INFO - Restoring parameters from training/Center/Epoch_2964
+2020-06-14 15:56:52,370 - INFO - Restoring parameters from training/Center/Epoch_2990
+2020-06-14 16:10:06,929 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 16:10:07,654 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py:3632: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 16:10:07,831 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 16:10:43,726 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 16:10:44,493 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py:3632: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 16:10:44,677 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 16:10:47,061 - INFO - Summary name Cross Entropy is illegal; using Cross_Entropy instead.
+2020-06-14 16:10:47,064 - WARNING - From /home/stmutasa/PycharmProjects/MetUS/Model.py:92: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+2020-06-14 16:10:47,333 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-06-14 16:12:28,098 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 16:12:29,662 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 16:12:31,418 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 16:12:39,556 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-06-14 16:12:39,577 - INFO - Restoring parameters from training/Center_SN/Epoch_104
+2020-06-14 16:12:50,960 - INFO - Restoring parameters from training/Center_SN/Epoch_130
+2020-06-14 16:13:11,166 - INFO - Restoring parameters from training/Center_SN/Epoch_156
+2020-06-14 16:13:22,198 - INFO - Restoring parameters from training/Center_SN/Epoch_182
+2020-06-14 16:13:42,094 - INFO - Restoring parameters from training/Center_SN/Epoch_208
+2020-06-14 16:14:02,455 - INFO - Restoring parameters from training/Center_SN/Epoch_234
+2020-06-14 16:14:08,952 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2020-06-14 16:14:13,090 - INFO - Restoring parameters from training/Center_SN/Epoch_260
+2020-06-14 16:14:32,894 - INFO - Restoring parameters from training/Center_SN/Epoch_286
+2020-06-14 16:14:43,450 - INFO - Restoring parameters from training/Center_SN/Epoch_312
+2020-06-14 16:14:44,534 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2020-06-14 16:15:03,831 - INFO - Restoring parameters from training/Center_SN/Epoch_338
+2020-06-14 16:15:23,516 - INFO - Restoring parameters from training/Center_SN/Epoch_364
+2020-06-14 16:15:34,342 - INFO - Restoring parameters from training/Center_SN/Epoch_390
+2020-06-14 16:15:53,891 - INFO - Restoring parameters from training/Center_SN/Epoch_416
+2020-06-14 16:16:05,270 - INFO - Restoring parameters from training/Center_SN/Epoch_442
+2020-06-14 16:16:25,731 - INFO - Restoring parameters from training/Center_SN/Epoch_468
+2020-06-14 16:16:46,112 - INFO - Restoring parameters from training/Center_SN/Epoch_494
+2020-06-14 16:16:56,882 - INFO - Restoring parameters from training/Center_SN/Epoch_520
+2020-06-14 16:17:16,558 - INFO - Restoring parameters from training/Center_SN/Epoch_546
+2020-06-14 16:17:27,202 - INFO - Restoring parameters from training/Center_SN/Epoch_572
+2020-06-14 16:17:46,867 - INFO - Restoring parameters from training/Center_SN/Epoch_598
+2020-06-14 16:18:06,822 - INFO - Restoring parameters from training/Center_SN/Epoch_624
+2020-06-14 16:18:17,522 - INFO - Restoring parameters from training/Center_SN/Epoch_650
+2020-06-14 16:18:37,302 - INFO - Restoring parameters from training/Center_SN/Epoch_676
+2020-06-14 16:18:56,985 - INFO - Restoring parameters from training/Center_SN/Epoch_702
+2020-06-14 16:19:07,801 - INFO - Restoring parameters from training/Center_SN/Epoch_728
+2020-06-14 16:19:27,286 - INFO - Restoring parameters from training/Center_SN/Epoch_754
+2020-06-14 16:19:47,062 - INFO - Restoring parameters from training/Center_SN/Epoch_780
+2020-06-14 16:19:57,748 - INFO - Restoring parameters from training/Center_SN/Epoch_806
+2020-06-14 16:20:17,359 - INFO - Restoring parameters from training/Center_SN/Epoch_832
+2020-06-14 16:20:36,815 - INFO - Restoring parameters from training/Center_SN/Epoch_858
+2020-06-14 16:20:47,901 - INFO - Restoring parameters from training/Center_SN/Epoch_884
+2020-06-14 16:21:08,250 - INFO - Restoring parameters from training/Center_SN/Epoch_910
+2020-06-14 16:21:28,550 - INFO - Restoring parameters from training/Center_SN/Epoch_936
+2020-06-14 16:21:39,701 - INFO - Restoring parameters from training/Center_SN/Epoch_962
+2020-06-14 16:22:00,310 - INFO - Restoring parameters from training/Center_SN/Epoch_988
+2020-06-14 16:22:11,577 - INFO - Restoring parameters from training/Center_SN/Epoch_1014
+2020-06-14 16:22:31,251 - INFO - Restoring parameters from training/Center_SN/Epoch_1040
+2020-06-14 16:22:42,706 - INFO - Restoring parameters from training/Center_SN/Epoch_1066
+2020-06-14 16:23:03,210 - INFO - Restoring parameters from training/Center_SN/Epoch_1092
+2020-06-14 16:23:22,683 - INFO - Restoring parameters from training/Center_SN/Epoch_1118
+2020-06-14 16:23:34,074 - INFO - Restoring parameters from training/Center_SN/Epoch_1144
+2020-06-14 16:23:54,670 - INFO - Restoring parameters from training/Center_SN/Epoch_1170
+2020-06-14 16:24:14,420 - INFO - Restoring parameters from training/Center_SN/Epoch_1196
+2020-06-14 16:24:25,235 - INFO - Restoring parameters from training/Center_SN/Epoch_1222
+2020-06-14 16:24:44,959 - INFO - Restoring parameters from training/Center_SN/Epoch_1248
+2020-06-14 16:25:04,899 - INFO - Restoring parameters from training/Center_SN/Epoch_1274
+2020-06-14 16:25:15,522 - INFO - Restoring parameters from training/Center_SN/Epoch_1300
+2020-06-14 16:25:35,258 - INFO - Restoring parameters from training/Center_SN/Epoch_1326
+2020-06-14 16:25:55,027 - INFO - Restoring parameters from training/Center_SN/Epoch_1352
+2020-06-14 16:26:05,755 - INFO - Restoring parameters from training/Center_SN/Epoch_1378
+2020-06-14 16:26:25,818 - INFO - Restoring parameters from training/Center_SN/Epoch_1404
+2020-06-14 16:26:45,463 - INFO - Restoring parameters from training/Center_SN/Epoch_1430
+2020-06-14 16:26:56,339 - INFO - Restoring parameters from training/Center_SN/Epoch_1456
+2020-06-14 16:27:16,194 - INFO - Restoring parameters from training/Center_SN/Epoch_1482
+2020-06-14 16:27:36,691 - INFO - Restoring parameters from training/Center_SN/Epoch_1508
+2020-06-14 16:27:48,174 - INFO - Restoring parameters from training/Center_SN/Epoch_1534
+2020-06-14 16:28:08,118 - INFO - Restoring parameters from training/Center_SN/Epoch_1560
+2020-06-14 16:28:19,322 - INFO - Restoring parameters from training/Center_SN/Epoch_1586
+2020-06-14 16:28:39,758 - INFO - Restoring parameters from training/Center_SN/Epoch_1612
+2020-06-14 16:28:59,614 - INFO - Restoring parameters from training/Center_SN/Epoch_1638
+2020-06-14 16:29:10,210 - INFO - Restoring parameters from training/Center_SN/Epoch_1664
+2020-06-14 16:29:29,735 - INFO - Restoring parameters from training/Center_SN/Epoch_1690
+2020-06-14 16:29:40,500 - INFO - Restoring parameters from training/Center_SN/Epoch_1716
+2020-06-14 16:30:00,202 - INFO - Restoring parameters from training/Center_SN/Epoch_1742
+2020-06-14 16:30:19,946 - INFO - Restoring parameters from training/Center_SN/Epoch_1768
+2020-06-14 16:30:30,629 - INFO - Restoring parameters from training/Center_SN/Epoch_1794
+2020-06-14 16:30:50,640 - INFO - Restoring parameters from training/Center_SN/Epoch_1820
+2020-06-14 16:31:10,472 - INFO - Restoring parameters from training/Center_SN/Epoch_1846
+2020-06-14 16:31:21,252 - INFO - Restoring parameters from training/Center_SN/Epoch_1872
+2020-06-14 16:31:40,978 - INFO - Restoring parameters from training/Center_SN/Epoch_1898
+2020-06-14 16:32:00,807 - INFO - Restoring parameters from training/Center_SN/Epoch_1924
+2020-06-14 16:32:11,616 - INFO - Restoring parameters from training/Center_SN/Epoch_1950
+2020-06-14 16:32:31,055 - INFO - Restoring parameters from training/Center_SN/Epoch_1976
+2020-06-14 16:32:50,518 - INFO - Restoring parameters from training/Center_SN/Epoch_2002
+2020-06-14 16:33:01,023 - INFO - Restoring parameters from training/Center_SN/Epoch_2028
+2020-06-14 16:33:20,915 - INFO - Restoring parameters from training/Center_SN/Epoch_2054
+2020-06-14 16:33:40,738 - INFO - Restoring parameters from training/Center_SN/Epoch_2080
+2020-06-14 16:33:51,482 - INFO - Restoring parameters from training/Center_SN/Epoch_2106
+2020-06-14 16:34:11,035 - INFO - Restoring parameters from training/Center_SN/Epoch_2132
+2020-06-14 16:34:30,766 - INFO - Restoring parameters from training/Center_SN/Epoch_2158
+2020-06-14 16:34:41,592 - INFO - Restoring parameters from training/Center_SN/Epoch_2184
+2020-06-14 16:35:01,535 - INFO - Restoring parameters from training/Center_SN/Epoch_2210
+2020-06-14 16:35:21,336 - INFO - Restoring parameters from training/Center_SN/Epoch_2236
+2020-06-14 16:35:32,123 - INFO - Restoring parameters from training/Center_SN/Epoch_2262
+2020-06-14 16:35:52,026 - INFO - Restoring parameters from training/Center_SN/Epoch_2288
+2020-06-14 16:36:11,870 - INFO - Restoring parameters from training/Center_SN/Epoch_2314
+2020-06-14 16:36:22,590 - INFO - Restoring parameters from training/Center_SN/Epoch_2340
+2020-06-14 16:36:42,379 - INFO - Restoring parameters from training/Center_SN/Epoch_2366
+2020-06-14 16:37:02,228 - INFO - Restoring parameters from training/Center_SN/Epoch_2392
+2020-06-14 16:37:12,834 - INFO - Restoring parameters from training/Center_SN/Epoch_2418
+2020-06-14 16:37:32,735 - INFO - Restoring parameters from training/Center_SN/Epoch_2444
+2020-06-14 16:37:52,455 - INFO - Restoring parameters from training/Center_SN/Epoch_2470
+2020-06-14 16:38:03,296 - INFO - Restoring parameters from training/Center_SN/Epoch_2496
+2020-06-14 16:38:22,990 - INFO - Restoring parameters from training/Center_SN/Epoch_2522
+2020-06-14 16:38:42,618 - INFO - Restoring parameters from training/Center_SN/Epoch_2548
+2020-06-14 16:38:53,462 - INFO - Restoring parameters from training/Center_SN/Epoch_2574
+2020-06-14 16:39:13,154 - INFO - Restoring parameters from training/Center_SN/Epoch_2600
+2020-06-14 16:39:33,062 - INFO - Restoring parameters from training/Center_SN/Epoch_2626
+2020-06-14 16:39:43,813 - INFO - Restoring parameters from training/Center_SN/Epoch_2652
+2020-06-14 16:40:03,686 - INFO - Restoring parameters from training/Center_SN/Epoch_2678
+2020-06-14 16:40:23,454 - INFO - Restoring parameters from training/Center_SN/Epoch_2704
+2020-06-14 16:40:34,306 - INFO - Restoring parameters from training/Center_SN/Epoch_2730
+2020-06-14 16:40:54,157 - INFO - Restoring parameters from training/Center_SN/Epoch_2756
+2020-06-14 16:41:04,794 - INFO - Restoring parameters from training/Center_SN/Epoch_2782
+2020-06-14 16:41:24,789 - INFO - Restoring parameters from training/Center_SN/Epoch_2808
+2020-06-14 16:41:44,506 - INFO - Restoring parameters from training/Center_SN/Epoch_2834
+2020-06-14 16:41:55,288 - INFO - Restoring parameters from training/Center_SN/Epoch_2860
+2020-06-14 16:42:15,037 - INFO - Restoring parameters from training/Center_SN/Epoch_2886
+2020-06-14 16:42:34,717 - INFO - Restoring parameters from training/Center_SN/Epoch_2912
+2020-06-14 16:42:45,546 - INFO - Restoring parameters from training/Center_SN/Epoch_2938
+2020-06-14 16:43:05,401 - INFO - Restoring parameters from training/Center_SN/Epoch_2964
+2020-06-14 16:43:25,316 - INFO - Restoring parameters from training/Center_SN/Epoch_2990
+2020-06-14 17:37:22,256 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 17:37:23,025 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py:3632: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 17:37:23,207 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 17:37:25,624 - INFO - Summary name Cross Entropy is illegal; using Cross_Entropy instead.
+2020-06-14 17:37:25,627 - WARNING - From /home/stmutasa/PycharmProjects/MetUS/Model.py:94: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+2020-06-14 17:37:25,688 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-06-14 17:38:18,460 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 17:38:19,157 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py:3632: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 17:38:19,330 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 17:38:35,406 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 17:38:35,745 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 17:38:36,314 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 17:38:49,162 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 17:38:49,871 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py:3632: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 17:38:50,057 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 17:38:57,898 - INFO - Summary name Cross Entropy is illegal; using Cross_Entropy instead.
+2020-06-14 17:38:57,903 - WARNING - From /home/stmutasa/PycharmProjects/MetUS/Model.py:95: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+2020-06-14 17:38:57,996 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-06-14 17:39:54,686 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-06-14 17:39:55,071 - INFO - NumExpr defaulting to 8 threads.
+2020-06-14 17:39:55,628 - WARNING - From /home/stmutasa/PycharmProjects/SODKit/SODNetwork.py:1605: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-06-14 17:39:58,198 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-06-14 17:39:58,199 - INFO - Restoring parameters from training/Center_FL/Epoch_52
+2020-06-14 17:40:17,735 - INFO - Restoring parameters from training/Center_FL/Epoch_78
+2020-06-14 17:40:36,910 - INFO - Restoring parameters from training/Center_FL/Epoch_104
+2020-06-14 17:40:48,006 - INFO - Restoring parameters from training/Center_FL/Epoch_130
+2020-06-14 17:40:49,148 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2020-06-14 17:41:08,470 - INFO - Restoring parameters from training/Center_FL/Epoch_156
+2020-06-14 17:41:28,524 - INFO - Restoring parameters from training/Center_FL/Epoch_182
+2020-06-14 17:41:40,199 - INFO - Restoring parameters from training/Center_FL/Epoch_208
+2020-06-14 17:42:00,750 - INFO - Restoring parameters from training/Center_FL/Epoch_234
+2020-06-14 17:42:09,423 - WARNING - From /home/stmutasa/miniconda3/envs/TF_GPU13/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2020-06-14 17:42:11,847 - INFO - Restoring parameters from training/Center_FL/Epoch_260
+2020-06-14 17:42:32,133 - INFO - Restoring parameters from training/Center_FL/Epoch_286
+2020-06-14 17:42:52,400 - INFO - Restoring parameters from training/Center_FL/Epoch_312
+2020-06-14 17:43:03,857 - INFO - Restoring parameters from training/Center_FL/Epoch_338
+2020-06-14 17:43:24,386 - INFO - Restoring parameters from training/Center_FL/Epoch_364
+2020-06-14 17:43:35,735 - INFO - Restoring parameters from training/Center_FL/Epoch_390
+2020-06-14 17:43:56,174 - INFO - Restoring parameters from training/Center_FL/Epoch_416
+2020-06-14 17:44:16,518 - INFO - Restoring parameters from training/Center_FL/Epoch_442
+2020-06-14 17:44:28,022 - INFO - Restoring parameters from training/Center_FL/Epoch_468
+2020-06-14 17:44:48,514 - INFO - Restoring parameters from training/Center_FL/Epoch_494
+2020-06-14 17:45:00,013 - INFO - Restoring parameters from training/Center_FL/Epoch_520
+2020-06-14 17:45:20,639 - INFO - Restoring parameters from training/Center_FL/Epoch_546
+2020-06-14 17:45:32,139 - INFO - Restoring parameters from training/Center_FL/Epoch_572
+2020-06-14 17:45:52,532 - INFO - Restoring parameters from training/Center_FL/Epoch_598
+2020-06-14 17:46:13,002 - INFO - Restoring parameters from training/Center_FL/Epoch_624
+2020-06-14 17:46:24,098 - INFO - Restoring parameters from training/Center_FL/Epoch_650
+2020-06-14 17:46:44,545 - INFO - Restoring parameters from training/Center_FL/Epoch_676
+2020-06-14 17:47:04,935 - INFO - Restoring parameters from training/Center_FL/Epoch_702
+2020-06-14 17:47:16,130 - INFO - Restoring parameters from training/Center_FL/Epoch_728
+2020-06-14 17:47:36,602 - INFO - Restoring parameters from training/Center_FL/Epoch_754
+2020-06-14 17:47:47,782 - INFO - Restoring parameters from training/Center_FL/Epoch_780
+2020-06-14 17:48:07,898 - INFO - Restoring parameters from training/Center_FL/Epoch_806
+2020-06-14 17:48:27,649 - INFO - Restoring parameters from training/Center_FL/Epoch_832
+2020-06-14 17:48:38,534 - INFO - Restoring parameters from training/Center_FL/Epoch_858
+2020-06-14 17:48:58,452 - INFO - Restoring parameters from training/Center_FL/Epoch_884
+2020-06-14 17:49:18,126 - INFO - Restoring parameters from training/Center_FL/Epoch_910
+2020-06-14 17:49:28,850 - INFO - Restoring parameters from training/Center_FL/Epoch_936
+2020-06-14 17:49:48,558 - INFO - Restoring parameters from training/Center_FL/Epoch_962
+2020-06-14 17:50:08,986 - INFO - Restoring parameters from training/Center_FL/Epoch_988
+2020-06-14 17:50:20,262 - INFO - Restoring parameters from training/Center_FL/Epoch_1014
+2020-06-14 17:50:40,639 - INFO - Restoring parameters from training/Center_FL/Epoch_1040
+2020-06-14 17:50:52,014 - INFO - Restoring parameters from training/Center_FL/Epoch_1066
+2020-06-14 17:51:11,658 - INFO - Restoring parameters from training/Center_FL/Epoch_1092
+2020-06-14 17:51:32,264 - INFO - Restoring parameters from training/Center_FL/Epoch_1118
+2020-06-14 17:51:43,706 - INFO - Restoring parameters from training/Center_FL/Epoch_1144
+2020-06-14 17:52:04,222 - INFO - Restoring parameters from training/Center_FL/Epoch_1170
+2020-06-14 17:52:15,034 - INFO - Restoring parameters from training/Center_FL/Epoch_1196
+2020-06-14 17:52:34,643 - INFO - Restoring parameters from training/Center_FL/Epoch_1222
+2020-06-14 17:52:54,351 - INFO - Restoring parameters from training/Center_FL/Epoch_1248
+2020-06-14 17:53:05,051 - INFO - Restoring parameters from training/Center_FL/Epoch_1274
+2020-06-14 17:53:24,773 - INFO - Restoring parameters from training/Center_FL/Epoch_1300
+2020-06-14 17:53:35,574 - INFO - Restoring parameters from training/Center_FL/Epoch_1326
+2020-06-14 17:53:55,321 - INFO - Restoring parameters from training/Center_FL/Epoch_1352
+2020-06-14 17:54:05,754 - INFO - Restoring parameters from training/Center_FL/Epoch_1378
+2020-06-14 17:54:25,318 - INFO - Restoring parameters from training/Center_FL/Epoch_1404
+2020-06-14 17:54:45,118 - INFO - Restoring parameters from training/Center_FL/Epoch_1430
+2020-06-14 17:54:55,704 - INFO - Restoring parameters from training/Center_FL/Epoch_1456
+2020-06-14 17:55:15,627 - INFO - Restoring parameters from training/Center_FL/Epoch_1482
+2020-06-14 17:55:26,396 - INFO - Restoring parameters from training/Center_FL/Epoch_1508
+2020-06-14 17:55:46,238 - INFO - Restoring parameters from training/Center_FL/Epoch_1534
+2020-06-14 17:56:06,031 - INFO - Restoring parameters from training/Center_FL/Epoch_1560
+2020-06-14 17:56:16,711 - INFO - Restoring parameters from training/Center_FL/Epoch_1586
+2020-06-14 17:56:36,394 - INFO - Restoring parameters from training/Center_FL/Epoch_1612
+2020-06-14 17:56:47,247 - INFO - Restoring parameters from training/Center_FL/Epoch_1638
+2020-06-14 17:57:07,007 - INFO - Restoring parameters from training/Center_FL/Epoch_1664
+2020-06-14 17:57:26,631 - INFO - Restoring parameters from training/Center_FL/Epoch_1690
+2020-06-14 17:57:37,534 - INFO - Restoring parameters from training/Center_FL/Epoch_1716
+2020-06-14 17:57:57,253 - INFO - Restoring parameters from training/Center_FL/Epoch_1742
+2020-06-14 17:58:16,886 - INFO - Restoring parameters from training/Center_FL/Epoch_1768
+2020-06-14 17:58:27,664 - INFO - Restoring parameters from training/Center_FL/Epoch_1794
+2020-06-14 17:58:47,524 - INFO - Restoring parameters from training/Center_FL/Epoch_1820
+2020-06-14 17:59:07,274 - INFO - Restoring parameters from training/Center_FL/Epoch_1846
+2020-06-14 17:59:17,992 - INFO - Restoring parameters from training/Center_FL/Epoch_1872
+2020-06-14 17:59:37,774 - INFO - Restoring parameters from training/Center_FL/Epoch_1898
+2020-06-14 17:59:48,475 - INFO - Restoring parameters from training/Center_FL/Epoch_1924
+2020-06-14 18:00:08,326 - INFO - Restoring parameters from training/Center_FL/Epoch_1950
+2020-06-14 18:00:28,110 - INFO - Restoring parameters from training/Center_FL/Epoch_1976
+2020-06-14 18:00:39,048 - INFO - Restoring parameters from training/Center_FL/Epoch_2002
+2020-06-14 18:00:58,696 - INFO - Restoring parameters from training/Center_FL/Epoch_2028
+2020-06-14 18:01:18,345 - INFO - Restoring parameters from training/Center_FL/Epoch_2054
+2020-06-14 18:01:29,019 - INFO - Restoring parameters from training/Center_FL/Epoch_2080
+2020-06-14 18:01:48,693 - INFO - Restoring parameters from training/Center_FL/Epoch_2106
+2020-06-14 18:02:08,218 - INFO - Restoring parameters from training/Center_FL/Epoch_2132
+2020-06-14 18:02:19,000 - INFO - Restoring parameters from training/Center_FL/Epoch_2158
+2020-06-14 18:02:38,719 - INFO - Restoring parameters from training/Center_FL/Epoch_2184
+2020-06-14 18:02:49,438 - INFO - Restoring parameters from training/Center_FL/Epoch_2210
+2020-06-14 18:03:09,182 - INFO - Restoring parameters from training/Center_FL/Epoch_2236
+2020-06-14 18:03:28,874 - INFO - Restoring parameters from training/Center_FL/Epoch_2262
+2020-06-14 18:03:39,450 - INFO - Restoring parameters from training/Center_FL/Epoch_2288
+2020-06-14 18:03:59,078 - INFO - Restoring parameters from training/Center_FL/Epoch_2314
+2020-06-14 18:04:09,765 - INFO - Restoring parameters from training/Center_FL/Epoch_2340
+2020-06-14 18:04:29,390 - INFO - Restoring parameters from training/Center_FL/Epoch_2366
+2020-06-14 18:04:49,098 - INFO - Restoring parameters from training/Center_FL/Epoch_2392
+2020-06-14 18:04:59,948 - INFO - Restoring parameters from training/Center_FL/Epoch_2418
+2020-06-14 18:05:19,617 - INFO - Restoring parameters from training/Center_FL/Epoch_2444
+2020-06-14 18:05:39,362 - INFO - Restoring parameters from training/Center_FL/Epoch_2470
+2020-06-14 18:05:50,070 - INFO - Restoring parameters from training/Center_FL/Epoch_2496
+2020-06-14 18:06:09,630 - INFO - Restoring parameters from training/Center_FL/Epoch_2522
+2020-06-14 18:06:29,522 - INFO - Restoring parameters from training/Center_FL/Epoch_2548
+2020-06-14 18:06:40,047 - INFO - Restoring parameters from training/Center_FL/Epoch_2574
+2020-06-14 18:06:59,803 - INFO - Restoring parameters from training/Center_FL/Epoch_2600
+2020-06-14 18:07:19,496 - INFO - Restoring parameters from training/Center_FL/Epoch_2626
+2020-06-14 18:07:39,048 - INFO - Restoring parameters from training/Center_FL/Epoch_2652
+2020-06-14 18:07:49,984 - INFO - Restoring parameters from training/Center_FL/Epoch_2678
+2020-06-14 18:08:09,738 - INFO - Restoring parameters from training/Center_FL/Epoch_2704
+2020-06-14 18:08:20,316 - INFO - Restoring parameters from training/Center_FL/Epoch_2730
+2020-06-14 18:08:39,743 - INFO - Restoring parameters from training/Center_FL/Epoch_2756
+2020-06-14 18:08:59,400 - INFO - Restoring parameters from training/Center_FL/Epoch_2782
+2020-06-14 18:09:19,192 - INFO - Restoring parameters from training/Center_FL/Epoch_2808
+2020-06-14 18:09:29,972 - INFO - Restoring parameters from training/Center_FL/Epoch_2834
+2020-06-14 18:09:49,700 - INFO - Restoring parameters from training/Center_FL/Epoch_2860
+2020-06-14 18:10:09,466 - INFO - Restoring parameters from training/Center_FL/Epoch_2886
+2020-06-14 18:10:20,252 - INFO - Restoring parameters from training/Center_FL/Epoch_2912
+2020-06-14 18:10:39,674 - INFO - Restoring parameters from training/Center_FL/Epoch_2938
+2020-06-14 18:10:59,374 - INFO - Restoring parameters from training/Center_FL/Epoch_2964
+2020-06-14 18:11:10,069 - INFO - Restoring parameters from training/Center_FL/Epoch_2990

@@ -34,7 +34,7 @@ tf.app.flags.DEFINE_float('moving_avg_decay', 0.999, """ The decay rate for the 
 
 # Directory control
 tf.app.flags.DEFINE_string('train_dir', 'training/', """Directory to write event logs and save checkpoint files""")
-tf.app.flags.DEFINE_string('RunInfo', 'Center/', """Unique file name for this training run""")
+tf.app.flags.DEFINE_string('RunInfo', 'Center_FL/', """Unique file name for this training run""")
 tf.app.flags.DEFINE_integer('GPU', 0, """Which GPU to use""")
 
 # Define a custom training class
@@ -180,9 +180,6 @@ def test():
 
 def main(argv=None):  # pylint: disable=unused-argument
     time.sleep(60)
-    if tf.gfile.Exists('testing/'):
-        tf.gfile.DeleteRecursively('testing/')
-    tf.gfile.MakeDirs('testing/')
     test()
 
 

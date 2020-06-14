@@ -19,6 +19,7 @@ FLAGS = tf.app.flags.FLAGS
 
 # Retreive helper function object
 sdn = SDN.SODMatrix()
+sdloss = SDN.SODLoss(2)
 
 def forward_pass(images, phase_train):
 
@@ -45,30 +46,31 @@ def forward_pass(images, phase_train):
 
 
 def total_loss(logits, labels):
-
     """
     Good old SCE
     """
 
-    # Apply cost sensitive loss here
-    if FLAGS.loss_factor != 1.0:
+    # # Apply cost sensitive loss here
+    # if FLAGS.loss_factor != 1.0:
+    #
+    #     # Make a nodule sensitive binary for values > 1 in this case
+    #     lesion_mask = tf.cast(labels >= 1, tf.float32)
+    #
+    #     # Now multiply this mask by scaling factor then add back to labels. Add 1 to prevent 0 loss
+    #     lesion_mask = tf.add(tf.multiply(lesion_mask, FLAGS.loss_factor), 1)
+    #
+    # # Change labels to one hot
+    # labels = tf.one_hot(tf.cast(labels, tf.uint8), depth=2, dtype=tf.uint8)
+    #
+    # # Calculate  loss
+    # loss = tf.nn.softmax_cross_entropy_with_logits_v2(labels=tf.squeeze(labels), logits=logits)
+    #
+    # # Apply cost sensitive loss here
+    # if FLAGS.loss_factor != 1.0: loss = tf.multiply(loss, tf.squeeze(lesion_mask))
 
-        # Make a nodule sensitive binary for values > 1 in this case
-        lesion_mask = tf.cast(labels >= FLAGS.loss_class, tf.float32)
-
-        # Now multiply this mask by scaling factor then add back to labels. Add 1 to prevent 0 loss
-        lesion_mask = tf.add(tf.multiply(lesion_mask, FLAGS.loss_factor), 1)
-
-    # Change labels to one hot
+    # Use focal loss
     labels = tf.one_hot(tf.cast(labels, tf.uint8), depth=2, dtype=tf.uint8)
-
-    # Calculate  loss
-    loss = tf.nn.softmax_cross_entropy_with_logits_v2(labels=tf.squeeze(labels), logits=logits)
-
-    # Apply cost sensitive loss here
-    if FLAGS.loss_factor != 1.0: loss = tf.multiply(loss, tf.squeeze(lesion_mask))
-
-    # Reduce to scalar
+    loss = sdloss.focal_softmax_cross_entropy_with_logits(labels, logits)
     loss = tf.reduce_mean(loss)
 
     # Output the summary of the MSE and MAE
