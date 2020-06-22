@@ -1,5 +1,5 @@
 """
-Helper functions for the project on scaphoid fractures
+Helper functions for the project fractures
 """
 
 import numpy as np
